@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Magic Essaouira</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.0.js" crossorigin="anonymous"></script>
+
 	<style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -31,9 +33,10 @@
 			</header>
 		  	<main role="main" class="inner cover">
 			    <h1 class="cover-heading">Morocco,<br>Differently.</h1>
+			    <hr>
 			    <p class="lead">With Magic Essaouira, you don’t just see another country,<br> you experience its culture, history, flavors and wonders.</p>
 			    <p class="lead">
-				    <a href="mailto:s.buhl@hotmail.com" class="btn btn-lg btn-primary">Contact Us</a>
+				    <a href="mailto:info@magicessaouira.com" class="btn btn-lg btn-primary">Contact Us</a>
 				    <a href="#seemore" class="btn btn-lg btn-outline-primary">See More</a>
 			    </p>
 			</main>
@@ -42,20 +45,60 @@
 
 	<div class="full surf">
 	    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-			<main role="main" class="inner cover">
-			    <p class="lead" id="seemore">Our website is under construction but, <br>
-			    you are already most than welcome !</p>
-			    <p class="lead">If you want to surf during a full week, <br>
+			<main role="main" class="inner cover middle-centered">
+			    <p class="lead" id="seemore"><span>Our website is under construction but, <br>
+			    you are already most than welcome !</span></p>
+			    <p class="lead"><span>If you want to surf during a full week, <br>
 				you will meet, the best and most friendly <br>
-				teachers of Essaouira, the surf twins.</p>
-				<p class="lead">Contact us<br>
+				teachers of Essaouira, <a href="http://www.surftwinsessaouira.com" target = "_blank">the surf twins</a>.</span></p>
+				<p class="lead"><span>Contact us<br>
 				<a href="mailto:info@magicessaouira.com">info@magicessaouira.com</a><br>
-				+32 495 586 807			
-				</p>
-				<p class="lead">We eager to answer all your wishes !</p>
+				00 212 6 43 80 66 55		
+				</span></p>
+				<p class="lead"><span>We eager to answer all your wishes !</span></p>
 			</main>
 		</div>
 	</div>
-	
+	<script type="text/javascript">
+	//enabling smooth scroll
+$(function() {
+  // Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          $target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            $target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+});
+</script>
 </body>
 </html>
